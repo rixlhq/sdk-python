@@ -5273,7 +5273,7 @@ class VideosApi:
     ) -> Video:
         """Update video thumbnail
 
-        Update the thumbnail image for an existing video
+        Update the thumbnail image for an existing video using API key authentication
 
         :param video_id: Video ID (required)
         :type video_id: str
@@ -5349,7 +5349,7 @@ class VideosApi:
     ) -> ApiResponse[Video]:
         """Update video thumbnail
 
-        Update the thumbnail image for an existing video
+        Update the thumbnail image for an existing video using API key authentication
 
         :param video_id: Video ID (required)
         :type video_id: str
@@ -5425,7 +5425,7 @@ class VideosApi:
     ) -> RESTResponseType:
         """Update video thumbnail
 
-        Update the thumbnail image for an existing video
+        Update the thumbnail image for an existing video using API key authentication
 
         :param video_id: Video ID (required)
         :type video_id: str
@@ -5536,6 +5536,7 @@ class VideosApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'ApiKeyAuth'
         ]
 
         return self.api_client.param_serialize(

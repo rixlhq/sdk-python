@@ -1,6 +1,6 @@
 [project]
 name = "rixl_videos_sdk"
-version = "2.0.0"
+version = "1.0.0"
 description = "RIXL API"
 authors = [
   {name = "RIXL Support",email = "support@rixl.com"},
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/qeeqez/rixl-sdk-python"
+Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 
 [tool.poetry]
 requires-poetry = ">=2.0"

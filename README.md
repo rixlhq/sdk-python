@@ -1,45 +1,32 @@
-# RIXL Python SDKs
+# RIXL Python SDK
 
-This repository contains the Python SDK split by service instead of one flat generated client.
+The official RIXL Python SDK offers a clean and pythonic way to interact with the RIXL API. It supports asynchronous operations and provides type hints for a better developer experience.
 
-## Layout
+## Components
 
-- `sdk/feeds` -> package `rixl_feeds_sdk`
-- `sdk/videos` -> package `rixl_videos_sdk`
-- `sdk/images` -> package `rixl_images_sdk`
+The SDK is organized into the following modules:
 
-Each service folder is a standalone Python package with its own `pyproject.toml`, `setup.py`, and generated client code.
+- **rixl_feeds_sdk**: Community and content feeds.
+- **rixl_videos_sdk**: Video management and processing.
+- **rixl_images_sdk**: Image upload and processing.
 
-## Install Examples
+## Installation
 
-Install a local service package:
+You can install the SDK modules using pip:
 
-```sh
-pip install ./sdk/videos
+```bash
+pip install rixl-feeds-sdk rixl-videos-sdk rixl-images-sdk
 ```
 
-Then import the generated package:
+## Quick Start
 
 ```python
-import rixl_videos_sdk
+from rixl_feeds_sdk import FeedsApi
+
+api = FeedsApi()
+# response = api.get_discover_feed()
 ```
 
-## Regenerate
+## Documentation
 
-Generate all services:
-
-```sh
-./scripts/generate.sh
-```
-
-Generate one service:
-
-```sh
-./scripts/generate.sh --service feeds
-```
-
-Regenerate from a fresh OpenAPI file:
-
-```sh
-./scripts/generate.sh --spec /path/to/public.swagger.json --service images
-```
+Comprehensive documentation can be found at [docs.rixl.com](https://docs.rixl.com).
