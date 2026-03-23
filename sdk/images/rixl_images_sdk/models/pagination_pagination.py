@@ -26,10 +26,10 @@ from typing_extensions import Self
 
 class PaginationPagination(BaseModel):
     """
-    PaginationPagination
+    Pagination data for the request.
     """ # noqa: E501
-    limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=None, description="Maximum number of items to return in a single request.")
-    offset: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Starting point of the result set.")
+    limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=25, description="Maximum number of items to return in a single request.")
+    offset: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=0, description="Starting point of the result set.")
     total: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="The total number of available items in the full list.")
     __properties: ClassVar[List[str]] = ["limit", "offset", "total"]
 
@@ -84,8 +84,8 @@ class PaginationPagination(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "limit": obj.get("limit"),
-            "offset": obj.get("offset"),
+            "limit": obj.get("limit") if obj.get("limit") is not None else 25,
+            "offset": obj.get("offset") if obj.get("offset") is not None else 0,
             "total": obj.get("total")
         })
         return _obj

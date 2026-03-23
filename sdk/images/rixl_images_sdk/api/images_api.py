@@ -20,10 +20,10 @@ from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
 from rixl_images_sdk.models.image import Image
-from rixl_images_sdk.models.internal_images_handler_complete_request import InternalImagesHandlerCompleteRequest
 from rixl_images_sdk.models.internal_images_handler_init_response import InternalImagesHandlerInitResponse
-from rixl_images_sdk.models.internal_images_handler_upload_init_request import InternalImagesHandlerUploadInitRequest
 from rixl_images_sdk.models.pagination_paginated_response_image import PaginationPaginatedResponseImage
+from rixl_images_sdk.models.post_images_upload_complete_request import PostImagesUploadCompleteRequest
+from rixl_images_sdk.models.post_images_upload_init_request import PostImagesUploadInitRequest
 
 from rixl_images_sdk.api_client import ApiClient, RequestSerialized
 from rixl_images_sdk.api_response import ApiResponse
@@ -291,7 +291,7 @@ class ImagesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -924,7 +924,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_complete(
         self,
-        request: Annotated[InternalImagesHandlerCompleteRequest, Field(description="Upload completion request")],
+        post_images_upload_complete_request: Annotated[PostImagesUploadCompleteRequest, Field(description="Upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -942,8 +942,8 @@ class ImagesApi:
 
         Complete the upload process and create the image record using API key authentication
 
-        :param request: Upload completion request (required)
-        :type request: InternalImagesHandlerCompleteRequest
+        :param post_images_upload_complete_request: Upload completion request (required)
+        :type post_images_upload_complete_request: PostImagesUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -967,7 +967,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_complete_serialize(
-            request=request,
+            post_images_upload_complete_request=post_images_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -996,7 +996,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_complete_with_http_info(
         self,
-        request: Annotated[InternalImagesHandlerCompleteRequest, Field(description="Upload completion request")],
+        post_images_upload_complete_request: Annotated[PostImagesUploadCompleteRequest, Field(description="Upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1014,8 +1014,8 @@ class ImagesApi:
 
         Complete the upload process and create the image record using API key authentication
 
-        :param request: Upload completion request (required)
-        :type request: InternalImagesHandlerCompleteRequest
+        :param post_images_upload_complete_request: Upload completion request (required)
+        :type post_images_upload_complete_request: PostImagesUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1039,7 +1039,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_complete_serialize(
-            request=request,
+            post_images_upload_complete_request=post_images_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1068,7 +1068,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_complete_without_preload_content(
         self,
-        request: Annotated[InternalImagesHandlerCompleteRequest, Field(description="Upload completion request")],
+        post_images_upload_complete_request: Annotated[PostImagesUploadCompleteRequest, Field(description="Upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1086,8 +1086,8 @@ class ImagesApi:
 
         Complete the upload process and create the image record using API key authentication
 
-        :param request: Upload completion request (required)
-        :type request: InternalImagesHandlerCompleteRequest
+        :param post_images_upload_complete_request: Upload completion request (required)
+        :type post_images_upload_complete_request: PostImagesUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1111,7 +1111,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_complete_serialize(
-            request=request,
+            post_images_upload_complete_request=post_images_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1135,7 +1135,7 @@ class ImagesApi:
 
     def _post_images_upload_complete_serialize(
         self,
-        request,
+        post_images_upload_complete_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1161,8 +1161,8 @@ class ImagesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if request is not None:
-            _body_params = request
+        if post_images_upload_complete_request is not None:
+            _body_params = post_images_upload_complete_request
 
 
         # set the HTTP header `Accept`
@@ -1213,7 +1213,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_init(
         self,
-        request: Annotated[InternalImagesHandlerUploadInitRequest, Field(description="Upload initialization request")],
+        post_images_upload_init_request: Annotated[PostImagesUploadInitRequest, Field(description="Upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1231,8 +1231,8 @@ class ImagesApi:
 
         Initialize a presigned URL upload for an image file using API key authentication
 
-        :param request: Upload initialization request (required)
-        :type request: InternalImagesHandlerUploadInitRequest
+        :param post_images_upload_init_request: Upload initialization request (required)
+        :type post_images_upload_init_request: PostImagesUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1256,7 +1256,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_init_serialize(
-            request=request,
+            post_images_upload_init_request=post_images_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1284,7 +1284,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_init_with_http_info(
         self,
-        request: Annotated[InternalImagesHandlerUploadInitRequest, Field(description="Upload initialization request")],
+        post_images_upload_init_request: Annotated[PostImagesUploadInitRequest, Field(description="Upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1302,8 +1302,8 @@ class ImagesApi:
 
         Initialize a presigned URL upload for an image file using API key authentication
 
-        :param request: Upload initialization request (required)
-        :type request: InternalImagesHandlerUploadInitRequest
+        :param post_images_upload_init_request: Upload initialization request (required)
+        :type post_images_upload_init_request: PostImagesUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1327,7 +1327,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_init_serialize(
-            request=request,
+            post_images_upload_init_request=post_images_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1355,7 +1355,7 @@ class ImagesApi:
     @validate_call
     def post_images_upload_init_without_preload_content(
         self,
-        request: Annotated[InternalImagesHandlerUploadInitRequest, Field(description="Upload initialization request")],
+        post_images_upload_init_request: Annotated[PostImagesUploadInitRequest, Field(description="Upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1373,8 +1373,8 @@ class ImagesApi:
 
         Initialize a presigned URL upload for an image file using API key authentication
 
-        :param request: Upload initialization request (required)
-        :type request: InternalImagesHandlerUploadInitRequest
+        :param post_images_upload_init_request: Upload initialization request (required)
+        :type post_images_upload_init_request: PostImagesUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1398,7 +1398,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._post_images_upload_init_serialize(
-            request=request,
+            post_images_upload_init_request=post_images_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1421,7 +1421,7 @@ class ImagesApi:
 
     def _post_images_upload_init_serialize(
         self,
-        request,
+        post_images_upload_init_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1447,8 +1447,8 @@ class ImagesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if request is not None:
-            _body_params = request
+        if post_images_upload_init_request is not None:
+            _body_params = post_images_upload_init_request
 
 
         # set the HTTP header `Accept`

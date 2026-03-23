@@ -38,6 +38,8 @@ __all__ = [
     "InternalImagesHandlerUploadInitRequest",
     "PaginationPaginatedResponseImage",
     "PaginationPagination",
+    "PostImagesUploadCompleteRequest",
+    "PostImagesUploadInitRequest",
 ]
 
 # import apis into sdk package
@@ -64,4 +66,6 @@ from rixl_images_sdk.models.internal_images_handler_init_response import Interna
 from rixl_images_sdk.models.internal_images_handler_upload_init_request import InternalImagesHandlerUploadInitRequest as InternalImagesHandlerUploadInitRequest
 from rixl_images_sdk.models.pagination_paginated_response_image import PaginationPaginatedResponseImage as PaginationPaginatedResponseImage
 from rixl_images_sdk.models.pagination_pagination import PaginationPagination as PaginationPagination
+from rixl_images_sdk.models.post_images_upload_complete_request import PostImagesUploadCompleteRequest as PostImagesUploadCompleteRequest
+from rixl_images_sdk.models.post_images_upload_init_request import PostImagesUploadInitRequest as PostImagesUploadInitRequest
 

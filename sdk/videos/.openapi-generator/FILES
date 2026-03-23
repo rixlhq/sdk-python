@@ -18,6 +18,9 @@ docs/Image.md
 docs/InternalVideosHandlerSubtitlesLanguageResponse.md
 docs/PaginationPaginatedResponseVideo.md
 docs/PaginationPagination.md
+docs/PostVideosUploadCompleteRequest.md
+docs/PostVideosUploadInitRequest.md
+docs/PutVideosVideoIdChaptersRequest.md
 docs/Subtitle.md
 docs/SubtitleDelete.md
 docs/UpdateChaptersRequest.md
@@ -51,6 +54,9 @@ rixl_videos_sdk/models/image.py
 rixl_videos_sdk/models/internal_videos_handler_subtitles_language_response.py
 rixl_videos_sdk/models/pagination_paginated_response_video.py
 rixl_videos_sdk/models/pagination_pagination.py
+rixl_videos_sdk/models/post_videos_upload_complete_request.py
+rixl_videos_sdk/models/post_videos_upload_init_request.py
+rixl_videos_sdk/models/put_videos_video_id_chapters_request.py
 rixl_videos_sdk/models/subtitle.py
 rixl_videos_sdk/models/subtitle_delete.py
 rixl_videos_sdk/models/update_chapters_request.py
@@ -63,4 +69,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_post_videos_upload_complete_request.py
+test/test_post_videos_upload_init_request.py
+test/test_put_videos_video_id_chapters_request.py
 tox.ini

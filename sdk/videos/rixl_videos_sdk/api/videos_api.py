@@ -16,21 +16,21 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBytes, StrictStr
-from typing import List, Optional, Tuple, Union
+from pydantic import Field, StrictStr
+from typing import List, Optional
 from typing_extensions import Annotated
 from rixl_videos_sdk.models.audio_track import AudioTrack
 from rixl_videos_sdk.models.audio_track_delete import AudioTrackDelete
-from rixl_videos_sdk.models.github_com_qeeqez_api_internal_videos_handler_upload_complete_request import GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest
 from rixl_videos_sdk.models.github_com_qeeqez_api_internal_videos_handler_upload_init_response import GithubComQeeqezApiInternalVideosHandlerUploadInitResponse
 from rixl_videos_sdk.models.internal_videos_handler_subtitles_language_response import InternalVideosHandlerSubtitlesLanguageResponse
 from rixl_videos_sdk.models.pagination_paginated_response_video import PaginationPaginatedResponseVideo
+from rixl_videos_sdk.models.post_videos_upload_complete_request import PostVideosUploadCompleteRequest
+from rixl_videos_sdk.models.post_videos_upload_init_request import PostVideosUploadInitRequest
+from rixl_videos_sdk.models.put_videos_video_id_chapters_request import PutVideosVideoIdChaptersRequest
 from rixl_videos_sdk.models.subtitle import Subtitle
 from rixl_videos_sdk.models.subtitle_delete import SubtitleDelete
-from rixl_videos_sdk.models.update_chapters_request import UpdateChaptersRequest
 from rixl_videos_sdk.models.update_chapters_response import UpdateChaptersResponse
 from rixl_videos_sdk.models.video import Video
-from rixl_videos_sdk.models.video_upload_init_request import VideoUploadInitRequest
 
 from rixl_videos_sdk.api_client import ApiClient, RequestSerialized
 from rixl_videos_sdk.api_response import ApiResponse
@@ -283,7 +283,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -559,7 +559,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -847,7 +847,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -1396,7 +1396,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -1657,7 +1657,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -1933,7 +1933,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -2221,7 +2221,7 @@ class VideosApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    '*/*'
+                    'application/json'
                 ]
             )
 
@@ -3099,7 +3099,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_complete(
         self,
-        request: Annotated[GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest, Field(description="Video upload completion request")],
+        post_videos_upload_complete_request: Annotated[PostVideosUploadCompleteRequest, Field(description="Video upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3117,8 +3117,8 @@ class VideosApi:
 
         Mark a video upload as complete after successful upload to storage using API key authentication
 
-        :param request: Video upload completion request (required)
-        :type request: GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest
+        :param post_videos_upload_complete_request: Video upload completion request (required)
+        :type post_videos_upload_complete_request: PostVideosUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3142,7 +3142,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_complete_serialize(
-            request=request,
+            post_videos_upload_complete_request=post_videos_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3171,7 +3171,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_complete_with_http_info(
         self,
-        request: Annotated[GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest, Field(description="Video upload completion request")],
+        post_videos_upload_complete_request: Annotated[PostVideosUploadCompleteRequest, Field(description="Video upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3189,8 +3189,8 @@ class VideosApi:
 
         Mark a video upload as complete after successful upload to storage using API key authentication
 
-        :param request: Video upload completion request (required)
-        :type request: GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest
+        :param post_videos_upload_complete_request: Video upload completion request (required)
+        :type post_videos_upload_complete_request: PostVideosUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3214,7 +3214,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_complete_serialize(
-            request=request,
+            post_videos_upload_complete_request=post_videos_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3243,7 +3243,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_complete_without_preload_content(
         self,
-        request: Annotated[GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest, Field(description="Video upload completion request")],
+        post_videos_upload_complete_request: Annotated[PostVideosUploadCompleteRequest, Field(description="Video upload completion request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3261,8 +3261,8 @@ class VideosApi:
 
         Mark a video upload as complete after successful upload to storage using API key authentication
 
-        :param request: Video upload completion request (required)
-        :type request: GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest
+        :param post_videos_upload_complete_request: Video upload completion request (required)
+        :type post_videos_upload_complete_request: PostVideosUploadCompleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3286,7 +3286,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_complete_serialize(
-            request=request,
+            post_videos_upload_complete_request=post_videos_upload_complete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3310,7 +3310,7 @@ class VideosApi:
 
     def _post_videos_upload_complete_serialize(
         self,
-        request,
+        post_videos_upload_complete_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3336,8 +3336,8 @@ class VideosApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if request is not None:
-            _body_params = request
+        if post_videos_upload_complete_request is not None:
+            _body_params = post_videos_upload_complete_request
 
 
         # set the HTTP header `Accept`
@@ -3388,7 +3388,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_init(
         self,
-        request: Annotated[VideoUploadInitRequest, Field(description="Video upload initialization request")],
+        post_videos_upload_init_request: Annotated[PostVideosUploadInitRequest, Field(description="Video upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3406,8 +3406,8 @@ class VideosApi:
 
         Initialize a video upload and get presigned URLs for video and poster using API key authentication
 
-        :param request: Video upload initialization request (required)
-        :type request: VideoUploadInitRequest
+        :param post_videos_upload_init_request: Video upload initialization request (required)
+        :type post_videos_upload_init_request: PostVideosUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3431,7 +3431,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_init_serialize(
-            request=request,
+            post_videos_upload_init_request=post_videos_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3459,7 +3459,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_init_with_http_info(
         self,
-        request: Annotated[VideoUploadInitRequest, Field(description="Video upload initialization request")],
+        post_videos_upload_init_request: Annotated[PostVideosUploadInitRequest, Field(description="Video upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3477,8 +3477,8 @@ class VideosApi:
 
         Initialize a video upload and get presigned URLs for video and poster using API key authentication
 
-        :param request: Video upload initialization request (required)
-        :type request: VideoUploadInitRequest
+        :param post_videos_upload_init_request: Video upload initialization request (required)
+        :type post_videos_upload_init_request: PostVideosUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3502,7 +3502,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_init_serialize(
-            request=request,
+            post_videos_upload_init_request=post_videos_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3530,7 +3530,7 @@ class VideosApi:
     @validate_call
     def post_videos_upload_init_without_preload_content(
         self,
-        request: Annotated[VideoUploadInitRequest, Field(description="Video upload initialization request")],
+        post_videos_upload_init_request: Annotated[PostVideosUploadInitRequest, Field(description="Video upload initialization request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3548,8 +3548,8 @@ class VideosApi:
 
         Initialize a video upload and get presigned URLs for video and poster using API key authentication
 
-        :param request: Video upload initialization request (required)
-        :type request: VideoUploadInitRequest
+        :param post_videos_upload_init_request: Video upload initialization request (required)
+        :type post_videos_upload_init_request: PostVideosUploadInitRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3573,7 +3573,7 @@ class VideosApi:
         """ # noqa: E501
 
         _param = self._post_videos_upload_init_serialize(
-            request=request,
+            post_videos_upload_init_request=post_videos_upload_init_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3596,7 +3596,7 @@ class VideosApi:
 
     def _post_videos_upload_init_serialize(
         self,
-        request,
+        post_videos_upload_init_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3622,8 +3622,8 @@ class VideosApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if request is not None:
-            _body_params = request
+        if post_videos_upload_init_request is not None:
+            _body_params = post_videos_upload_init_request
 
 
         # set the HTTP header `Accept`
@@ -3675,9 +3675,6 @@ class VideosApi:
     def post_videos_video_id_audio_tracks(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3697,12 +3694,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3727,9 +3718,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_audio_tracks_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3754,9 +3742,6 @@ class VideosApi:
     def post_videos_video_id_audio_tracks_with_http_info(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3776,12 +3761,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3806,9 +3785,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_audio_tracks_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3833,9 +3809,6 @@ class VideosApi:
     def post_videos_video_id_audio_tracks_without_preload_content(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3855,12 +3828,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3885,9 +3852,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_audio_tracks_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3907,9 +3871,6 @@ class VideosApi:
     def _post_videos_video_id_audio_tracks_serialize(
         self,
         video_id,
-        files,
-        language_codes,
-        labels,
         _request_auth,
         _content_type,
         _headers,
@@ -3919,7 +3880,6 @@ class VideosApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'files': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3937,12 +3897,6 @@ class VideosApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if files is not None:
-            _files['files'] = files
-        if language_codes is not None:
-            _form_params.append(('language_codes', language_codes))
-        if labels is not None:
-            _form_params.append(('labels', labels))
         # process the body parameter
 
 
@@ -3961,6 +3915,7 @@ class VideosApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
+                        'application/x-www-form-urlencoded', 
                         'multipart/form-data'
                     ]
                 )
@@ -3995,9 +3950,6 @@ class VideosApi:
     def post_videos_video_id_subtitles(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Subtitle files (.srt or .vtt)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4017,12 +3969,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Subtitle files (.srt or .vtt) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4047,9 +3993,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_subtitles_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4074,9 +4017,6 @@ class VideosApi:
     def post_videos_video_id_subtitles_with_http_info(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Subtitle files (.srt or .vtt)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4096,12 +4036,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Subtitle files (.srt or .vtt) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4126,9 +4060,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_subtitles_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4153,9 +4084,6 @@ class VideosApi:
     def post_videos_video_id_subtitles_without_preload_content(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        files: Annotated[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]], Field(description="Subtitle files (.srt or .vtt)")],
-        language_codes: Annotated[StrictStr, Field(description="Comma-separated language codes")],
-        labels: Annotated[StrictStr, Field(description="Comma-separated labels")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4175,12 +4103,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param files: Subtitle files (.srt or .vtt) (required)
-        :type files: List[bytearray]
-        :param language_codes: Comma-separated language codes (required)
-        :type language_codes: str
-        :param labels: Comma-separated labels (required)
-        :type labels: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4205,9 +4127,6 @@ class VideosApi:
 
         _param = self._post_videos_video_id_subtitles_serialize(
             video_id=video_id,
-            files=files,
-            language_codes=language_codes,
-            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4227,9 +4146,6 @@ class VideosApi:
     def _post_videos_video_id_subtitles_serialize(
         self,
         video_id,
-        files,
-        language_codes,
-        labels,
         _request_auth,
         _content_type,
         _headers,
@@ -4239,7 +4155,6 @@ class VideosApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'files': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4257,12 +4172,6 @@ class VideosApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if files is not None:
-            _files['files'] = files
-        if language_codes is not None:
-            _form_params.append(('language_codes', language_codes))
-        if labels is not None:
-            _form_params.append(('labels', labels))
         # process the body parameter
 
 
@@ -4281,6 +4190,7 @@ class VideosApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
+                        'application/x-www-form-urlencoded', 
                         'multipart/form-data'
                     ]
                 )
@@ -4316,8 +4226,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4339,10 +4247,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4368,8 +4272,6 @@ class VideosApi:
         _param = self._put_videos_video_id_audio_tracks_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4395,8 +4297,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4418,10 +4318,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4447,8 +4343,6 @@ class VideosApi:
         _param = self._put_videos_video_id_audio_tracks_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4474,8 +4368,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4497,10 +4389,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4526,8 +4414,6 @@ class VideosApi:
         _param = self._put_videos_video_id_audio_tracks_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4548,8 +4434,6 @@ class VideosApi:
         self,
         video_id,
         lang_code,
-        file,
-        label,
         _request_auth,
         _content_type,
         _headers,
@@ -4578,10 +4462,6 @@ class VideosApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if file is not None:
-            _files['file'] = file
-        if label is not None:
-            _form_params.append(('label', label))
         # process the body parameter
 
 
@@ -4600,6 +4480,7 @@ class VideosApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
+                        'application/x-www-form-urlencoded', 
                         'multipart/form-data'
                     ]
                 )
@@ -4634,7 +4515,7 @@ class VideosApi:
     def put_videos_video_id_chapters(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        request: Annotated[UpdateChaptersRequest, Field(description="Chapters array")],
+        put_videos_video_id_chapters_request: Annotated[PutVideosVideoIdChaptersRequest, Field(description="Chapters array")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4654,8 +4535,8 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param request: Chapters array (required)
-        :type request: UpdateChaptersRequest
+        :param put_videos_video_id_chapters_request: Chapters array (required)
+        :type put_videos_video_id_chapters_request: PutVideosVideoIdChaptersRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4680,7 +4561,7 @@ class VideosApi:
 
         _param = self._put_videos_video_id_chapters_serialize(
             video_id=video_id,
-            request=request,
+            put_videos_video_id_chapters_request=put_videos_video_id_chapters_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4710,7 +4591,7 @@ class VideosApi:
     def put_videos_video_id_chapters_with_http_info(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        request: Annotated[UpdateChaptersRequest, Field(description="Chapters array")],
+        put_videos_video_id_chapters_request: Annotated[PutVideosVideoIdChaptersRequest, Field(description="Chapters array")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4730,8 +4611,8 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param request: Chapters array (required)
-        :type request: UpdateChaptersRequest
+        :param put_videos_video_id_chapters_request: Chapters array (required)
+        :type put_videos_video_id_chapters_request: PutVideosVideoIdChaptersRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4756,7 +4637,7 @@ class VideosApi:
 
         _param = self._put_videos_video_id_chapters_serialize(
             video_id=video_id,
-            request=request,
+            put_videos_video_id_chapters_request=put_videos_video_id_chapters_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4786,7 +4667,7 @@ class VideosApi:
     def put_videos_video_id_chapters_without_preload_content(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        request: Annotated[UpdateChaptersRequest, Field(description="Chapters array")],
+        put_videos_video_id_chapters_request: Annotated[PutVideosVideoIdChaptersRequest, Field(description="Chapters array")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4806,8 +4687,8 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param request: Chapters array (required)
-        :type request: UpdateChaptersRequest
+        :param put_videos_video_id_chapters_request: Chapters array (required)
+        :type put_videos_video_id_chapters_request: PutVideosVideoIdChaptersRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4832,7 +4713,7 @@ class VideosApi:
 
         _param = self._put_videos_video_id_chapters_serialize(
             video_id=video_id,
-            request=request,
+            put_videos_video_id_chapters_request=put_videos_video_id_chapters_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4857,7 +4738,7 @@ class VideosApi:
     def _put_videos_video_id_chapters_serialize(
         self,
         video_id,
-        request,
+        put_videos_video_id_chapters_request,
         _request_auth,
         _content_type,
         _headers,
@@ -4885,8 +4766,8 @@ class VideosApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if request is not None:
-            _body_params = request
+        if put_videos_video_id_chapters_request is not None:
+            _body_params = put_videos_video_id_chapters_request
 
 
         # set the HTTP header `Accept`
@@ -4939,8 +4820,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Subtitle file (.srt or .vtt)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4962,10 +4841,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Subtitle file (.srt or .vtt) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4991,8 +4866,6 @@ class VideosApi:
         _param = self._put_videos_video_id_subtitles_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5018,8 +4891,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Subtitle file (.srt or .vtt)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5041,10 +4912,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Subtitle file (.srt or .vtt) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5070,8 +4937,6 @@ class VideosApi:
         _param = self._put_videos_video_id_subtitles_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5097,8 +4962,6 @@ class VideosApi:
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
         lang_code: Annotated[StrictStr, Field(description="Language Code (BCP 47)")],
-        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Subtitle file (.srt or .vtt)")],
-        label: Annotated[Optional[StrictStr], Field(description="Label (e.g. English)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5120,10 +4983,6 @@ class VideosApi:
         :type video_id: str
         :param lang_code: Language Code (BCP 47) (required)
         :type lang_code: str
-        :param file: Subtitle file (.srt or .vtt) (required)
-        :type file: bytearray
-        :param label: Label (e.g. English)
-        :type label: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5149,8 +5008,6 @@ class VideosApi:
         _param = self._put_videos_video_id_subtitles_lang_code_serialize(
             video_id=video_id,
             lang_code=lang_code,
-            file=file,
-            label=label,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5171,8 +5028,6 @@ class VideosApi:
         self,
         video_id,
         lang_code,
-        file,
-        label,
         _request_auth,
         _content_type,
         _headers,
@@ -5201,10 +5056,6 @@ class VideosApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if file is not None:
-            _files['file'] = file
-        if label is not None:
-            _form_params.append(('label', label))
         # process the body parameter
 
 
@@ -5223,6 +5074,7 @@ class VideosApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
+                        'application/x-www-form-urlencoded', 
                         'multipart/form-data'
                     ]
                 )
@@ -5257,7 +5109,6 @@ class VideosApi:
     def put_videos_video_id_thumbnail(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        thumbnail: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Thumbnail image file (max 5MB, image/*)")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5277,8 +5128,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param thumbnail: Thumbnail image file (max 5MB, image/*) (required)
-        :type thumbnail: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5303,7 +5152,6 @@ class VideosApi:
 
         _param = self._put_videos_video_id_thumbnail_serialize(
             video_id=video_id,
-            thumbnail=thumbnail,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5333,7 +5181,6 @@ class VideosApi:
     def put_videos_video_id_thumbnail_with_http_info(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        thumbnail: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Thumbnail image file (max 5MB, image/*)")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5353,8 +5200,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param thumbnail: Thumbnail image file (max 5MB, image/*) (required)
-        :type thumbnail: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5379,7 +5224,6 @@ class VideosApi:
 
         _param = self._put_videos_video_id_thumbnail_serialize(
             video_id=video_id,
-            thumbnail=thumbnail,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5409,7 +5253,6 @@ class VideosApi:
     def put_videos_video_id_thumbnail_without_preload_content(
         self,
         video_id: Annotated[StrictStr, Field(description="Video ID")],
-        thumbnail: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Thumbnail image file (max 5MB, image/*)")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5429,8 +5272,6 @@ class VideosApi:
 
         :param video_id: Video ID (required)
         :type video_id: str
-        :param thumbnail: Thumbnail image file (max 5MB, image/*) (required)
-        :type thumbnail: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5455,7 +5296,6 @@ class VideosApi:
 
         _param = self._put_videos_video_id_thumbnail_serialize(
             video_id=video_id,
-            thumbnail=thumbnail,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5480,7 +5320,6 @@ class VideosApi:
     def _put_videos_video_id_thumbnail_serialize(
         self,
         video_id,
-        thumbnail,
         _request_auth,
         _content_type,
         _headers,
@@ -5507,8 +5346,6 @@ class VideosApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if thumbnail is not None:
-            _files['thumbnail'] = thumbnail
         # process the body parameter
 
 
@@ -5527,6 +5364,7 @@ class VideosApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
+                        'application/x-www-form-urlencoded', 
                         'multipart/form-data'
                     ]
                 )

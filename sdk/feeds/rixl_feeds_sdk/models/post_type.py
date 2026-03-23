@@ -29,6 +29,8 @@ class PostType(str, Enum):
     """
     PostTypeImage = 'image'
     PostTypeVideo = 'video'
+    'video'2 = 'video'
+    'image'2 = 'image'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

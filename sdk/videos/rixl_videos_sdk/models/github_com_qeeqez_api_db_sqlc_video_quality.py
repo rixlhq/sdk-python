@@ -30,6 +30,9 @@ class GithubComQeeqezApiDbSqlcVideoQuality(str, Enum):
     VideoQualityBasic = 'basic'
     VideoQualityShorts = 'shorts'
     VideoQualityPro = 'pro'
+    'basic'2 = 'basic'
+    'shorts'2 = 'shorts'
+    'pro'2 = 'pro'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

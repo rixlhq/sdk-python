@@ -30,7 +30,7 @@ class PaginationPaginatedResponseVideo(BaseModel):
     PaginationPaginatedResponseVideo
     """ # noqa: E501
     data: Optional[List[Video]] = Field(default=None, description="Data contains the slice of items for the current request.")
-    pagination: Optional[PaginationPagination] = Field(default=None, description="Pagination data for the request.")
+    pagination: Optional[PaginationPagination] = None
     __properties: ClassVar[List[str]] = ["data", "pagination"]
 
     model_config = ConfigDict(
