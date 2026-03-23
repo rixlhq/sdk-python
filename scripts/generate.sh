@@ -91,10 +91,10 @@ if [[ -n "${service_arg}" ]]; then
 	services=("${service_arg}")
 fi
 
-mkdir -p "${ROOT_DIR}/sdk"
+mkdir -p "${ROOT_DIR}/sdk" "${ROOT_DIR}/openapi/services"
 
 for service in "${services[@]}"; do
-	service_spec="${TMP_DIR}/${service}.swagger.json"
+	service_spec="${ROOT_DIR}/openapi/services/${service}.swagger.json"
 	service_tmp="${TMP_DIR}/out-${service}"
 	output_dir="${ROOT_DIR}/sdk/${service}"
 	package_name="rixl_${service}_sdk"
@@ -112,7 +112,12 @@ for service in "${services[@]}"; do
 	perl -0pi -e 's{https://github.com/qeeqez/api}{https://github.com/qeeqez/rixl-sdk-python}g' "${service_tmp}/setup.py"
 
 	rm -rf "${service_tmp}/.openapi-generator"
-	rm -f "${service_tmp}/.gitlab-ci.yml" "${service_tmp}/.travis.yml" "${service_tmp}/git_push.sh"
+	rm -f \
+		"${service_tmp}/.gitlab-ci.yml" \
+		"${service_tmp}/.travis.yml" \
+		"${service_tmp}/git_push.sh" \
+		"${service_tmp}/test-requirements.txt" \
+		"${service_tmp}/tox.ini"
 
 	mkdir -p "${output_dir}"
 	rsync -a --delete \
