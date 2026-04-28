@@ -1,6 +1,6 @@
 # Examples
 
-Two runnable scripts against a local or remote RIXL API.
+Self-contained scripts. Each file imports the SDK and runs one task.
 
 ## Setup
 
@@ -13,12 +13,14 @@ pip install -r requirements.txt
 ## Run
 
 ```bash
-export RIXL_API_KEY=<key>
+export RIXL_API_KEY=<copied from the dashboard>
 export RIXL_BASE_URL=http://localhost:8081   # optional, defaults to https://api.rixl.com
 
-python basic/main.py        # list images, fetch one by IMAGE_ID (X-API-Key)
-python advanced/main.py     # full image and video upload pipelines (X-API-Key)
-python bearer/main.py       # mint client JWT, then call with Bearer auth
+python auth/main.py              # show both auth flows in one file (API key or client JWT)
+python basic/images/main.py      # list images, fetch by IMAGE_ID
+python basic/videos/main.py      # list videos, fetch by VIDEO_ID
+python basic/feeds/main.py       # read a feed (needs RIXL_FEED_ID)
+python basic/posts/main.py       # fetch a post (needs RIXL_FEED_ID + RIXL_POST_ID)
+python advanced/images/main.py   # full image upload pipeline
+python advanced/videos/main.py   # full video upload pipeline
 ```
-
-The `bearer/` example needs `RIXL_CLIENT_ID`, `RIXL_CLIENT_SECRET`, `RIXL_PROJECT_ID`, and `RIXL_SUBJECT` instead of `RIXL_API_KEY`.
