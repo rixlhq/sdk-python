@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/rixlhq/rixl-python/compare/v0.1.0...v0.1.1) (2026-04-29)
+
+
+### Bug Fixes
+
+* upgrade actions to avoid node 20 deprecation ([b6cf635](https://github.com/rixlhq/rixl-python/commit/b6cf635fa8a7ca66e87979660c06d8cdbc77445a))
+
 ## 0.1.0 (2026-04-29)
 
 
