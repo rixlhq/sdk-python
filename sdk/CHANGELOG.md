@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/rixlhq/rixl-python/compare/v0.2.1...v0.2.2) (2026-04-30)
+
+
+### Documentation
+
+* sync sdk/README from root for PyPI page ([46a0971](https://github.com/rixlhq/rixl-python/commit/46a0971bd3e373ed66f6040551ccafe6c4d86e0a))
+* trim pyproject description ([bf01e62](https://github.com/rixlhq/rixl-python/commit/bf01e62610b35e381dd33ee63097e1fc0127d3ee))
+
 ## [0.2.1](https://github.com/rixlhq/rixl-python/compare/v0.2.0...v0.2.1) (2026-04-30)
 
 
