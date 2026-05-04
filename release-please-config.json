@@ -5,7 +5,7 @@
     "packages": {
         "sdk": {
             "release-type": "python",
-            "package-name": "rixl-python",
+            "package-name": "rixl",
             "include-component-in-tag": false
         }
     }

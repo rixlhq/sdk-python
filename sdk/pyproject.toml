@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rixl-python"
+name = "rixl"
 version = "0.2.2"
 description = "Python client for the RIXL API."
 readme = "README.md"
